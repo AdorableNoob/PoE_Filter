@@ -3,10 +3,62 @@
 # ============================================== #
 
 # ================ Decorators ================== #
-Show 
+Hide 
     Class == "Stackable Currency"
-    SetFontSize 36
-    SetTextColor 120 120 120 255
-    SetBorderColor 120 120 120 255
+    SetFontSize 34
+    SetTextColor 127 127 127 255
+    SetBorderColor 127 127 127 255
     SetBackgroundColor 40 40 40 240
-    PlayAlertSound None
+    PlayAlertSound "None"
+    DisableDropSound
+    Continue
+
+# =========== Level-based overrides ============ #
+Show
+    BaseType == "Scroll of Wisdom"
+    AreaLevel < 25
+    SetTextColor 170 158 130 180
+    SetBorderColor 170 158 130 180
+
+Show
+    BaseType == "Orb of Transmutation" "Orb of augmentation" "Artificer's Orb" "Lesser Jeweller's Orb" "Glassblower's bauble" "Gemcutter's Prism"
+    AreaLevel < 50
+
+Show
+    BaseType " Rune"
+    AreaLevel < 60
+
+# =================== Rules ==================== #
+Show
+    BaseType == "Mirror of Kalandra"
+    SetFontSize 42
+    SetTextColor 255 0 0 255
+    SetBorderColor 255 0 0 255
+#   CustomSoundEffect "TODO" 300
+    PlayEffect Red
+    MinimapIcon 0 Brown Hexagon
+
+Show
+    BaseType == "Divine Orb" "Perfect Jeweller's Orb" # TODO: Top tier currencies (div, jeweler3, other?)
+    SetFontSize 42
+    SetTextColor 120 120 10 255
+    SetBorderColor 120 120 10 255
+    PlayEffect Yellow
+    MinimapIcon 1 Yellow UpsideDownHouse
+
+Show
+    BaseType == "Chaos Orb" "Orb of Chance" "Exalted Orb" "Orb of Alchemy" "Orb of Annulment" "Greater Jeweller's Orb"
+
+Show 
+    BaseType == "Vaal Orb"
+    SetTextVolor 140 10 10 255
+    SetBorderColor 140 10 10 255
+
+Show 
+    BaseType == "Armourer's scrap" "Blacksmith's weightstone" "Arcanist's etcher"
+    StackSize >= 3
+
+Hide
+    Class == "Stackable Currency"
+    BaseType == "Glassblower's bauble" "Gemcutter's Prism"
+    SetFontSize 18
