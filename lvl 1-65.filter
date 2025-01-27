@@ -1,0 +1,12 @@
+# ============================================== #
+#                   Currency                     #
+# ============================================== #
+
+# ================ Decorators ================== #
+Show 
+    Class == "Stackable Currency"
+    SetFontSize 36
+    SetTextColor 120 120 120 255
+    SetBorderColor 120 120 120 255
+    SetBackgroundColor 40 40 40 240
+    PlayAlertSound None
